@@ -7,6 +7,13 @@ var writeLog = require("./writeToLog");
 let option = process.argv[2];
 let searchText = process.argv.slice(3, process.argv.length).join(" ");
 
+let helpText = [
+    `node liri.js concert-this [artist/band name]`,
+    `node liri.js spotify-this-song [song name]`,
+    `node liri.js movie-this [movie name]`,
+    `node liri.js do-what-it-says`
+].join('\n');
+
 var liriSearch = function(option, searchText){
     switch(option){
         case "concert-this":
@@ -22,7 +29,8 @@ var liriSearch = function(option, searchText){
             searchRandom();
             break;
         default:
-            console.log("Invalid command, try this:");
+            console.log("command not found, usage: \n");
+            console.log(helpText);
             break;
     }
 }
