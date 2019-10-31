@@ -1,22 +1,21 @@
 require("dotenv").config();
-var searchSong = require("./searchSong");
-var searchConcert = require("./searchConcert");
-var searchMovie = require("./searchMovie");
 var fs = require("fs");
+var LiriBot = require("./liribot");
+var liriBot = new LiriBot();
 
 let option = process.argv[2];
-let searchText = process.argv.slice(3, process.argv.length - 1).join(" ");
+let searchText = process.argv.slice(3, process.argv.length).join(" ");
 
 var liriSearch = function(option, searchText){
     switch(option){
         case "concert-this":
-            searchConcert(searchText);
+            liriBot.searchConcert(searchText);
             break;
         case "spotify-this-song":
-            searchSong(searchText);
+            liriBot.searchSong(searchText);
             break;
         case "movie-this":
-            searchMovie(searchText);
+            liriBot.searchMovie(searchText);
             break;
         case "do-what-it-syas":
             searchRandom();
