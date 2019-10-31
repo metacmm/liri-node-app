@@ -13,6 +13,7 @@ let helpText = [
     `node liri.js movie-this [movie name]`,
     `node liri.js do-what-it-says`
 ].join('\n');
+let commandDivider = "\n----------------------------------------------\n";
 
 var liriSearch = function(option, searchText){
     switch(option){
@@ -29,8 +30,9 @@ var liriSearch = function(option, searchText){
             searchRandom();
             break;
         default:
-            console.log("command not found, usage: \n");
-            console.log(helpText);
+            let defaultText = "command not found, usage:\n" + helpText + commandDivider;
+            console.log(defaultText);
+            writeLog(defaultText);
             break;
     }
 }
@@ -46,5 +48,5 @@ var searchRandom = function(){
     });
 }
 
-writeLog("\n\n" + process.argv.join(" ") + "\n----------------------------------------------\n");
+writeLog("\n\n" + process.argv.join(" ") + commandDivider);
 liriSearch(option, searchText);

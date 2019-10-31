@@ -2,15 +2,8 @@
 
 /usr/local/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri.js do-what
 ----------------------------------------------
-
-
-/usr/local/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri.js do-what
-----------------------------------------------
-
-
-/usr/local/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri.js do-what
-----------------------------------------------
-
-
-/usr/local/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri.js do-what
+command not found, usage:node liri.js concert-this [artist/band name]
+node liri.js spotify-this-song [song name]
+node liri.js movie-this [movie name]
+node liri.js do-what-it-says
 ----------------------------------------------
