@@ -15,8 +15,7 @@ This app contains three main modules, liri, liribot and writeLog.
 * WriteToLog is to append every command and output to log files.
 
 #### Diagram
-![`Image of diagram`]
-(./LiriBot_Diagram.png)
+![`Image of diagram`](./LiriBot_Diagram.png)
 
 ### Instruction
 
