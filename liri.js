@@ -2,6 +2,7 @@ require("dotenv").config();
 var fs = require("fs");
 var LiriBot = require("./liribot");
 var liriBot = new LiriBot();
+var writeLog = require("./writeToLog");
 
 let option = process.argv[2];
 let searchText = process.argv.slice(3, process.argv.length).join(" ");
@@ -17,7 +18,7 @@ var liriSearch = function(option, searchText){
         case "movie-this":
             liriBot.searchMovie(searchText);
             break;
-        case "do-what-it-syas":
+        case "do-what-it-says":
             searchRandom();
             break;
         default:
@@ -28,7 +29,7 @@ var liriSearch = function(option, searchText){
 
 var searchRandom = function(){
     fs.readFile("random.txt", "utf8", function(err, data){
-        if (error){
+        if (err){
             return console.log("Error reading random file due to " + error);
         }
 
@@ -37,4 +38,5 @@ var searchRandom = function(){
     });
 }
 
+writeLog("\n\n" + process.argv.join(" ") + "\n----------------------------------------------\n");
 liriSearch(option, searchText);
