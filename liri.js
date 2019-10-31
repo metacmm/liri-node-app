@@ -14,17 +14,27 @@ let helpText = [
     `node liri.js do-what-it-says`
 ].join('\n');
 let commandDivider = "\n----------------------------------------------\n";
+let defaultSong = "The Sign";
+let defaultMovie = "Mr. Nobody";
 
-var liriSearch = function(option, searchText){
-    switch(option){
+var liriSearch = function (option, searchText) {
+    switch (option) {
         case "concert-this":
             liriBot.searchConcert(searchText);
             break;
         case "spotify-this-song":
-            liriBot.searchSong(searchText);
+            if (searchText === "") {
+                liriBot.searchSong(defaultSong);
+            } else {
+                liriBot.searchSong(searchText);
+            }
             break;
         case "movie-this":
-            liriBot.searchMovie(searchText);
+            if (searchText === "") {
+                liriBot.searchMovie(defaultMovie);
+            } else {
+                liriBot.searchMovie(searchText);
+            }
             break;
         case "do-what-it-says":
             searchRandom();
@@ -37,9 +47,9 @@ var liriSearch = function(option, searchText){
     }
 }
 
-var searchRandom = function(){
-    fs.readFile("random.txt", "utf8", function(err, data){
-        if (err){
+var searchRandom = function () {
+    fs.readFile("random.txt", "utf8", function (err, data) {
+        if (err) {
             return console.log("Error reading random file due to " + error);
         }
 

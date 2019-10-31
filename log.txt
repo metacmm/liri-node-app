@@ -1,0 +1,60 @@
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri.js --inspect-brk spotify-this-song
+----------------------------------------------
+command not found, usage:
+node liri.js concert-this [artist/band name]
+node liri.js spotify-this-song [song name]
+node liri.js movie-this [movie name]
+node liri.js do-what-it-says
+----------------------------------------------
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri.js --inspect-brk spotify-this-song
+----------------------------------------------
+command not found, usage:
+node liri.js concert-this [artist/band name]
+node liri.js spotify-this-song [song name]
+node liri.js movie-this [movie name]
+node liri.js do-what-it-says
+----------------------------------------------
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri.js spotify-this-song
+----------------------------------------------
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri.js spotify-this-song
+----------------------------------------------
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri movie-this
+----------------------------------------------
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri movie-this
+----------------------------------------------
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri movie-this
+----------------------------------------------
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri spotify-this-song
+----------------------------------------------
+Artist: Harry Styles
+
+The song's name: Sign of the Times
+
+A preview link: https://open.spotify.com/track/5Ohxk2dO5COHF1krpoPigN
+
+Album: Harry Styles
+===============================================
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri movie-this
+----------------------------------------------
+
+
+/usr/local/Cellar/node/12.11.1/bin/node /Users/xiaojie/UWBootCamp/code/liri-node-app/liri movie-this
+----------------------------------------------
