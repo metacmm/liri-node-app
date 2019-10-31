@@ -1,34 +1,32 @@
+require("dotenv").config();
 var axios = require("axios");
 var moment = require("moment");
-
-require("dotenv").config();
 var Spotify = require("node-spotify-api");
 var keys = require("./keys.js");
-
 var spotify = new Spotify(keys.spotify);
+var writeLog = require("./writeToLog");
+
+
 var LiriBot = function () {
-    const divider = "===============================================";
+    const divider = "\n===============================================\n";
     this.searchConcert = function (name) {
         let app_id = "codingbootcamp";
         let artist = name.split(" ").join("+");
         axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=" + app_id)
             .then(function (response) {
                 let data = response.data;
-                if (data.length == 0) {
-                    console.log(data);
-                } else {
-                    data.forEach(function (concert) {
-                        let output = [
-                            "Name of the venue: " + concert.venue.name,
-                            "Venue location: " + concert.venue.city + " " + concert.venue.country,
-                            "Date of the Event: " + moment(concert.datetime).format("MM/DD/YYYY")
-                        ].join("\n\n");
-                        console.log(output + divider);
-                    });
-                }
+                data.forEach(function (concert) {
+                    let output = [
+                        "Name of the venue: " + concert.venue.name,
+                        "Venue location: " + concert.venue.city + " " + concert.venue.country,
+                        "Date of the Event: " + moment(concert.datetime).format("MM/DD/YYYY")
+                    ].join("\n\n");
+                    console.log(output + divider);
+                    writeLog(output + divider);
+                });
             })
             .catch(function (error) {
-                console.log(error);
+                console.log(JSON.stringify(error));
             });
     }
     this.searchMovie = function (name) {
@@ -47,6 +45,7 @@ var LiriBot = function () {
                     "Actors in the movie: " + data.Actors
                 ].join("\n\n");
                 console.log(output);
+                writeLog(output + divider);
             })
             .catch(function (error) {
                 console.log(error);
@@ -62,8 +61,9 @@ var LiriBot = function () {
                     "The song's name: " + data.name,
                     "A preview link: " + data.external_urls.spotify,
                     "Album: " + data.album.name
-                ].join("\n\n");              
+                ].join("\n\n");
                 console.log(output);
+                writeLog(output + divider);
             })
             .catch(function (err) {
                 console.log(err);
