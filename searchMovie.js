@@ -19,4 +19,4 @@ var searchMovie = function(name){
     })
 };
 
-searchMovie("blade runner");
+module.exports = searchMovie;

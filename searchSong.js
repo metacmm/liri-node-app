@@ -18,7 +18,4 @@ var searchSong = function(name){
     });
 }
 
-searchSong("Lose You To Love Me");
-module.exports = {
-    searchSong: searchSong,
-};
+module.exports = searchSong;
