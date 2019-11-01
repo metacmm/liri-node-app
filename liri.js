@@ -18,7 +18,7 @@ let defaultSong = "The Sign";
 let defaultMovie = "Mr. Nobody";
 
 var liriSearch = function (option, searchText) {
-    switch (option) {
+    switch (option.toLowerCase()) {
         case "concert-this":
             liriBot.searchConcert(searchText);
             break;
@@ -38,6 +38,10 @@ var liriSearch = function (option, searchText) {
             break;
         case "do-what-it-says":
             searchRandom();
+            break;
+        case "help":
+            console.log(helpText + commandDivider);
+            writeLog(helpText + commandDivider);
             break;
         default:
             let defaultText = "command not found, usage:\n" + helpText + commandDivider;

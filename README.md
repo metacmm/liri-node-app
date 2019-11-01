@@ -19,7 +19,7 @@ This app contains three main modules, liri, liribot and writeLog.
 
 ### Instruction
 
-1. `node liri.js concert-this [artist/band name here]`
+1. `node liri concert-this [artist/band name here]`
 
     * This will search the Bands in Town Artist Events API for an artist and render the following information about each event to the terminal:
 
@@ -28,8 +28,10 @@ This app contains three main modules, liri, liribot and writeLog.
         * Venue location
 
         * Date of the Event (use moment to format this as "MM/DD/YYYY")
+    
+    ![`demo video`](./liribot-recording-concert.gif)
 
-2. `node liri.js spotify-this-song [song name here]`
+2. `node liri spotify-this-song [song name here]`
 
     * This will show the following information about the song in your terminal/bash window
 
@@ -67,9 +69,17 @@ This app contains three main modules, liri, liribot and writeLog.
 
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody'.
 
-4. `node liri.js do-what-it-says`
+4. `node liri do-what-it-says`
 
     * LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
+
+5. `node liri help`
+
+    * LIRI will show the valid command argument to your terminal/bash window.
+    ![`demo video`](./liribot-recording-help.gif)
+
+
+
 
 
 
