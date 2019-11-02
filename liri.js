@@ -4,10 +4,11 @@ var LiriBot = require("./liribot");
 var liriBot = new LiriBot();
 var writeLog = require("./writeToLog");
 
-let option = process.argv[2];
+let option = process.argv[2] === undefined? "" : process.argv[2].toLowerCase();
 let searchText = process.argv.slice(3, process.argv.length).join(" ");
 
 let helpText = [
+    `Usage:`,
     `node liri.js concert-this [artist/band name]`,
     `node liri.js spotify-this-song [song name]`,
     `node liri.js movie-this [movie name]`,
@@ -18,7 +19,7 @@ let defaultSong = "The Sign";
 let defaultMovie = "Mr. Nobody";
 
 var liriSearch = function (option, searchText) {
-    switch (option.toLowerCase()) {
+    switch (option) {
         case "concert-this":
             liriBot.searchConcert(searchText);
             break;
@@ -39,6 +40,7 @@ var liriSearch = function (option, searchText) {
         case "do-what-it-says":
             searchRandom();
             break;
+        case "":
         case "help":
             console.log(helpText + commandDivider);
             writeLog(helpText + commandDivider);
